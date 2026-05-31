@@ -1,4 +1,4 @@
-name: Deploy Custom Env
+name: Deploy Custom Environment
 
 on:
   workflow_dispatch:
