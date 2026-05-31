@@ -1,4 +1,4 @@
-variable "snowflake_account" {
+variable "snowflake_account_name" {
   type = string
 }
 
