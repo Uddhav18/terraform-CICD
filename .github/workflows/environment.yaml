@@ -1,0 +1,64 @@
+name: Terraform Snowflake CICD Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        required: true
+        type: choice
+        options:
+          - dev
+          - stg
+          - uat
+          - prod
+
+      action:
+        description: "Terraform operation"
+        required: true
+        type: choice
+        options:
+          - validate
+          - plan
+          - apply
+          - destroy
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    env:
+      TF_VAR_environment: ${{ github.event.inputs.environment }}
+
+      TF_VAR_snowflake_organization_name: ${{ secrets.SNOWFLAKE_ORGANIZATION_NAME }}
+      TF_VAR_snowflake_account_name: ${{ secrets.SNOWFLAKE_ACCOUNT_NAME }}
+      TF_VAR_snowflake_user: ${{ secrets.SNOWFLAKE_USER }}
+      TF_VAR_snowflake_password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      TF_VAR_snowflake_role: ${{ secrets.SNOWFLAKE_ROLE }}
+      TF_VAR_snowflake_warehouse: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        if: ${{ github.event.inputs.action == 'validate' }}
+        run: terraform validate
+
+      - name: Terraform Plan
+        if: ${{ github.event.inputs.action == 'plan' }}
+        run: terraform plan
+
+      - name: Terraform Apply
+        if: ${{ github.event.inputs.action == 'apply' }}
+        run: terraform apply -auto-approve
+
+      - name: Terraform Destroy
+        if: ${{ github.event.inputs.action == 'destroy' }}
+        run: terraform destroy -auto-approve
