@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.15.5",
-  "serial": 18,
+  "serial": 17,
   "lineage": "7fb1f2f3-8f78-d63e-d7de-8557a5ae57b5",
   "outputs": {},
   "resources": [
@@ -9,7 +9,7 @@
       "mode": "managed",
       "type": "snowflake_account_role",
       "name": "etl_role",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -43,7 +43,7 @@
       "mode": "managed",
       "type": "snowflake_database",
       "name": "etl_db",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 1,
@@ -82,7 +82,7 @@
       "mode": "managed",
       "type": "snowflake_schema",
       "name": "raw_schema",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 2,
@@ -298,7 +298,7 @@
       "mode": "managed",
       "type": "snowflake_stage",
       "name": "employee_stage",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -341,7 +341,7 @@
       "mode": "managed",
       "type": "snowflake_stream",
       "name": "employee_stream",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -375,7 +375,7 @@
       "mode": "managed",
       "type": "snowflake_table",
       "name": "employee",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 0,
@@ -442,7 +442,7 @@
       "mode": "managed",
       "type": "snowflake_task",
       "name": "employee_task",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 1,
@@ -1100,7 +1100,7 @@
       "mode": "managed",
       "type": "snowflake_warehouse",
       "name": "etl_wh",
-      "provider": "provider[\"registry.terraform.io/snowflakedb/snowflake\"]",
+      "provider": "provider[\"registry.terraform.io/snowflake-labs/snowflake\"]",
       "instances": [
         {
           "schema_version": 1,
