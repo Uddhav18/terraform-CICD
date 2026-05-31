@@ -72,12 +72,12 @@ resource "snowflake_stage" "employee_stage" {
 # STREAM
 ############################################
 
-resource "snowflake_stream" "employee_stream" {
+resource "snowflake_stream_on_table" "employee_stream" {
   name     = "EMPLOYEE_STREAM"
   database = snowflake_database.etl_db.name
   schema   = snowflake_schema.raw_schema.name
 
-  on_table = snowflake_table.employee.fully_qualified_name
+  table = snowflake_table.employee.fully_qualified_name
 }
 
 ############################################
