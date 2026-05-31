@@ -22,3 +22,11 @@ variable "snowflake_role" {
 variable "snowflake_warehouse" {
   type = string
 }
+
+variable "environment" {
+  type = string
+}
+
+resource "snowflake_database" "db" {
+  name = "${var.environment}_DB"
+}
