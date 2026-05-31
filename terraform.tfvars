@@ -1,5 +1,0 @@
-snowflake_account   = "ilpcuia-tfb96552"
-snowflake_user      = "uddhav18"
-snowflake_password  = "9075280115@uDDHAV"
-snowflake_role      = "ACCOUNTADMIN"
-snowflake_warehouse = "COMPUTE_WH"
