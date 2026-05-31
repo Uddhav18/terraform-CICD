@@ -1,4 +1,4 @@
-name: Terraform Snowflake CICD Workflow
+name: Deploy Custom Env
 
 on:
   workflow_dispatch:
